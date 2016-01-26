@@ -1,0 +1,23 @@
+EmpNumber - 32
+Description - 62
+CommonName - 30
+DateOfBirth - DateTime
+ExtendedEmailAd - 100
+Age - int
+DateEmployed - DateTime
+DateTerminated - DateTime
+ReasonForSuspen - 32
+ReasonTerminate - 32
+Occupation - 32
+EmpStatus - short
+Class - short
+RateOfPay - decimal
+NetPay - decimal
+
+bulk insert dbo.Companies from 'c:\temp\Employee.csv'
+with
+(
+fieldterminator = ',',
+rowterminator = '\n'
+)
+go

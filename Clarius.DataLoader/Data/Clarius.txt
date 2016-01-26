@@ -1,41 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Clarius.DataLoader
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Load(@"..\..\Data\Clarius-1.csv");
-            //Load(@"..\..\Data\Clarius-2.csv");
-        }
-
-        public static void Load(string filename)
-        {
-            using (var fileStream = new FileStream(filename, FileMode.Open))
-            {
-                using (var streamReader = new StreamReader(fileStream))
-                {
-                    var line = streamReader.ReadLine();
-                    while ((line = streamReader.ReadLine()) != null)
-                    {
-                        if (!String.IsNullOrEmpty(line))
-                        {
-                            string[] data = line.Split(',');
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-/*
 0"EmpNumber",				"                    D00000000145",
 1"Description",				"candle\hgouw                                                  ",
 2"CommonName",				"GOUW, HERMAN                  ",
@@ -62,4 +24,3 @@ namespace Clarius.DataLoader
 6"HomePhone",		"                    ",
 7"Email",			"hermangouw@gmail.com            ",
 8"BusEmail"			"                                "
-*/
